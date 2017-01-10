@@ -1,0 +1,11 @@
+guestbook:
+  image:
+    name: guestbook
+    build: /vagrant/guestbook
+  container:
+    name: guestbook
+    image: guestbook
+    environment:
+      - REDIS_HOST: 'localhost'
+      - DATABASE_URL: 'postgres://guestbook:password@localhost/guestbook'
+    network_mode: host
